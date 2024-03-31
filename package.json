@@ -1,0 +1,12 @@
+{
+  "name": "js-algo-ce",
+  "version": "1.0.0",
+  "description": "## Big-O complexity",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Mario Lazzari",
+  "license": "ISC"
+}
