@@ -1,4 +1,24 @@
-# JavaScript Algorithms
+- [TypeScript Algorithms](#typescript-algorithms)
+  - [Algorithm](#algorithm)
+  - [Big-O complexity](#big-o-complexity)
+    - [Object](#object)
+    - [Arrays](#arrays)
+  - [Math algorithms](#math-algorithms)
+    - [Fibonacci](#fibonacci)
+    - [Factorial](#factorial)
+    - [Prime number](#prime-number)
+    - [Power of 2](#power-of-2)
+  - [Recursion](#recursion)
+    - [Fibonacci number](#fibonacci-number)
+    - [Factorial recursive](#factorial-recursive)
+  - [Search](#search)
+    - [Linear search](#linear-search)
+    - [Binary search](#binary-search)
+    - [Binary search (recursive version)](#binary-search-recursive-version)
+  - [Sorting](#sorting)
+    - [Bubble sort](#bubble-sort)
+
+# TypeScript Algorithms
 
 ## Algorithm
 
@@ -179,3 +199,35 @@ function binarySearchRec(arr: number[], target: number) {
 Complexity: O(log(n))
 
 ## Sorting
+
+Given an array of numbers, sort it ascending.
+
+### Bubble sort
+
+Compares adjacent elements and swap them if not sorted.
+
+```ts 
+function bubbleSort(arr: number[]): number[] {
+  let tmp: number;
+  let swapped: boolean;
+
+  do {
+    swapped = false;
+
+    for (let i = 0; i < arr.length - 1; i++) {
+      // swap adjacent if not ordered
+      if (arr[i] > arr[i + 1]) {
+        tmp = arr[i];
+        arr[i] = arr[i + 1];
+        arr[i + 1] = tmp;
+        swapped = true;
+      }
+    }
+  } while (swapped);
+
+  return arr;
+}
+```
+
+Complexity O(n^2)
+
