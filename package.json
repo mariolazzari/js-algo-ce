@@ -4,9 +4,14 @@
   "description": "## Big-O complexity",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "fibo": "nodemon math/fibonacci.ts",
+    "fact": "nodemon math/factorial.ts"
   },
   "keywords": [],
   "author": "Mario Lazzari",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.0",
+    "ts-node": "^10.9.2"
+  }
 }

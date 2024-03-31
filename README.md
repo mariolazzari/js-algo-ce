@@ -38,3 +38,7 @@ Ordered collection of values
 
 ### Fibonacci
 
+```sh
+npm run fibo
+```
+
