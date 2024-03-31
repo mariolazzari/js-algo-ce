@@ -8,3 +8,12 @@ export function fibonacci(n: number): number[] {
 
   return fib;
 }
+
+// recursion
+export function fibonacciRec(n: number): number {
+  if (n < 2) {
+    return n;
+  }
+
+  return fibonacciRec(n - 1) + fibonacciRec(n - 2);
+}

@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { fibonacci } from "../math/fibonacci";
-import { factorial } from "../math/factorial";
+import { fibonacci, fibonacciRec } from "../math/fibonacci";
+import { factorial, factorialRec } from "../math/factorial";
 import { isPrime } from "../math/prime";
 import { isPowerOfTwo, isPowerOfTwoBitwise } from "../math/power";
 
@@ -40,5 +40,17 @@ describe("Math", () => {
     expect(isPowerOfTwoBitwise(1)).toBeTruthy();
     expect(isPowerOfTwoBitwise(2)).toBeTruthy();
     expect(isPowerOfTwoBitwise(5)).toBeFalsy();
+  });
+
+  it("should return Fibonacci number with recursion", () => {
+    expect(fibonacciRec(0)).toBe(0);
+    expect(fibonacciRec(1)).toBe(1);
+    expect(fibonacciRec(6)).toBe(8);
+  });
+
+  it("should return Factiorial with recursion", () => {
+    expect(factorialRec(0)).toBe(1);
+    expect(factorialRec(4)).toBe(24);
+    expect(factorialRec(5)).toBe(120);
   });
 });

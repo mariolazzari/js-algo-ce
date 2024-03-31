@@ -8,3 +8,11 @@ export function factorial(n: number): number {
 
   return fact;
 }
+
+export function factorialRec(n: number): number {
+  if (n < 1) {
+    return 1;
+  }
+
+  return n * factorialRec(n - 1);
+}
