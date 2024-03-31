@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import { fibonacci } from "../math/fibonacci";
 import { factorial } from "../math/factorial";
 import { isPrime } from "../math/prime";
+import { isPowerOfTwo, isPowerOfTwoBitwise } from "../math/power";
 
 describe("Math", () => {
   it("should compute Fibonacci series", () => {
@@ -27,5 +28,17 @@ describe("Math", () => {
     expect(isPrime(1)).toBeFalsy();
     expect(isPrime(4)).toBeFalsy();
     expect(isPrime(5)).toBeTruthy();
+  });
+
+  it("should compute Power of 2", () => {
+    expect(isPowerOfTwo(1)).toBeTruthy();
+    expect(isPowerOfTwo(2)).toBeTruthy();
+    expect(isPowerOfTwo(5)).toBeFalsy();
+  });
+
+  it("should compute Power of 2 bitwise", () => {
+    expect(isPowerOfTwoBitwise(1)).toBeTruthy();
+    expect(isPowerOfTwoBitwise(2)).toBeTruthy();
+    expect(isPowerOfTwoBitwise(5)).toBeFalsy();
   });
 });

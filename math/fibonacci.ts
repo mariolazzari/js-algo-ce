@@ -1,5 +1,3 @@
-// Fibonacci
-
 // O(n)
 export function fibonacci(n: number): number[] {
   const fib: number[] = [0, 1]; // O(1)
@@ -10,7 +8,3 @@ export function fibonacci(n: number): number[] {
 
   return fib;
 }
-
-[2, 3, 7].forEach(n => {
-  console.log(`fibo(${n}) =`, fibonacci(n));
-});

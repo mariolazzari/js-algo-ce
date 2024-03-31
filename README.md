@@ -49,3 +49,8 @@ O(n)
 Integers larger than the square root do not need to be checked
 
 O(sqrt(n))
+
+### Power of 2
+
+O(log(n)) 
+O(1) bitwise version
