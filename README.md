@@ -38,7 +38,14 @@ Ordered collection of values
 
 ### Fibonacci
 
-```sh
-npm run fibo
-```
+O(n)
 
+### Factorial
+
+O(n)
+
+### Prime number
+
+Integers larger than the square root do not need to be checked
+
+O(sqrt(n))

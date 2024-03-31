@@ -1,17 +1,15 @@
 {
   "name": "js-algo-ce",
   "version": "1.0.0",
-  "description": "## Big-O complexity",
+  "description": "JavaScript Algorithms",
   "main": "index.js",
   "scripts": {
-    "fibo": "nodemon math/fibonacci.ts",
-    "fact": "nodemon math/factorial.ts"
+    "test": "vitest"
   },
   "keywords": [],
   "author": "Mario Lazzari",
   "license": "ISC",
   "devDependencies": {
-    "nodemon": "^3.1.0",
-    "ts-node": "^10.9.2"
+    "vitest": "^1.4.0"
   }
 }
