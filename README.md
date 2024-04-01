@@ -21,6 +21,8 @@
     - [Insertion sort](#insertion-sort)
     - [Quick sort](#quick-sort)
     - [Merge sort](#merge-sort)
+  - [Misc](#misc)
+    - [Cartesian product](#cartesian-product)
 
 # TypeScript Algorithms
 
@@ -410,3 +412,25 @@ function mergeSort(arr: number[]): number[] {
 ```
 
 Complexity O(nlog(n))
+
+## Misc
+
+### Cartesian product
+
+Traverse each array and pair each element with second array.
+
+```ts
+function cartsianProduct(arr1: number[], arr2: number[]): number[][] {
+  const res: number[][] = [];
+
+  arr1.forEach(el1 => {
+    arr2.forEach(el2 => {
+      res.push([el1, el2]);
+    });
+  });
+
+  return res;
+}
+```
+
+Complexity O(n*m)
