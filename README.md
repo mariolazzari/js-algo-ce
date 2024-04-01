@@ -17,6 +17,8 @@
     - [Binary search (recursive version)](#binary-search-recursive-version)
   - [Sorting](#sorting)
     - [Bubble sort](#bubble-sort)
+    - [Insertion sort](#insertion-sort)
+    - [QuickSort](#quicksort)
 
 # TypeScript Algorithms
 
@@ -229,5 +231,41 @@ function bubbleSort(arr: number[]): number[] {
 }
 ```
 
-Complexity O(n^2)
+Complexity O(n<sup>2</sup>)
 
+### Insertion sort
+
+Assume a portion as sorted: if next element is greater than sorted part, go to next element, otherwise shift larger part to the right
+
+```ts
+function insertionSort(arr: number[]): number[] {
+  let toInsert: number;
+  let j: number;
+
+  for (let i = 0; i < arr.length; i++) {
+    toInsert = arr[i];
+    j = i - 1;
+
+    while (j >= 0 && arr[j] > toInsert) {
+      arr[j + 1] = arr[j];
+      j--;
+    }
+    arr[j + 1] = toInsert;
+  }
+
+  return arr;
+}
+```
+
+Complexity: O(n<sup>2</sup>)
+
+### QuickSort 
+
+Find a pivot element (first, last, random or median) and put everything smaller that pivot to the left, greatest to the right. 
+Repeat with recursion until all arrays have lenght 1 and concatenate them from left to right.
+
+```ts
+
+```
+
+Complexity:  
