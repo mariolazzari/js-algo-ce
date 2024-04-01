@@ -19,7 +19,8 @@
   - [Sorting](#sorting)
     - [Bubble sort](#bubble-sort)
     - [Insertion sort](#insertion-sort)
-    - [QuickSort](#quicksort)
+    - [Quick sort](#quick-sort)
+    - [Merge sort](#merge-sort)
 
 # TypeScript Algorithms
 
@@ -339,7 +340,7 @@ function insertionSort(arr: number[]): number[] {
 
 Complexity: O(n<sup>2</sup>)
 
-### QuickSort 
+### Quick sort 
 
 Find a pivot element (first, last, random or median) and put everything smaller that pivot to the left, greatest to the right. 
 Repeat with recursion until all arrays have lenght 1 and concatenate them from left to right.
@@ -369,3 +370,43 @@ function quickSort(arr: number[]): number[] {
 ```
 
 Complexity: O(n<sup>2</sup>) if array already sorted, O(nlog(n)) for average case
+
+### Merge sort
+
+Divide the array into mutliple sub arrays of length 1; repetly merge the sub arrays into sorted arrays.
+
+```ts
+function merge(leftArr: number[], rightArr: number[]): number[] {
+  const sortedArr: number[] = [];
+
+  while (leftArr.length && rightArr.length) {
+    if (leftArr[0] <= rightArr[0]) {
+      const first = leftArr.shift();
+      if (first) {
+        sortedArr.push(first);
+      }
+    } else {
+      const first = rightArr.shift();
+      if (first) {
+        sortedArr.push(first);
+      }
+    }
+  }
+
+  return [...sortedArr, ...leftArr, ...rightArr];
+}
+
+function mergeSort(arr: number[]): number[] {
+  if (arr.length < 2) {
+    return arr;
+  }
+
+  const mid = Math.floor(arr.length / 2);
+  const leftArr = arr.slice(0, mid);
+  const rightArr = arr.slice(mid);
+
+  return merge(leftArr, rightArr);
+}
+```
+
+Complexity O(nlog(n))
