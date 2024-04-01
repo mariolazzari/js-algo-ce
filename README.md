@@ -8,6 +8,7 @@
     - [Factorial](#factorial)
     - [Prime number](#prime-number)
     - [Power of 2](#power-of-2)
+    - [Pawer of 2 Bitwise version](#pawer-of-2-bitwise-version)
   - [Recursion](#recursion)
     - [Fibonacci number](#fibonacci-number)
     - [Factorial recursive](#factorial-recursive)
@@ -60,22 +61,101 @@ Ordered collection of values
 
 ### Fibonacci
 
-O(n)
+Sequence in which each number is the sum of the two preceding ones.
+
+```ts
+function fibonacci(n: number): number[] {
+  const fib: number[] = [0, 1];
+
+  for (let i = 2; i < n; i++) {
+    fib[i] = fib[i - 2] + fib[i - 1];
+  }
+
+  return fib;
+}
+```
+
+Complexity O(n)
 
 ### Factorial
 
-O(n)
+Product of an integer and all the integers below it.
+
+```ts
+function factorial(n: number): number {
+  let fact = 1;
+
+  // O(n)
+  for (let i = 1; i <= n; i++) {
+    fact *= i;
+  }
+
+  return fact;
+}
+```
+
+Complexity O(n)
 
 ### Prime number
 
-Integers larger than the square root do not need to be checked
+Integers larger than the square root do not need to be checked.
 
-O(sqrt(n))
+```ts 
+function isPrime(n: number): boolean {
+  if (n < 2) {
+    return false;
+  }
+
+  for (let i = 2; i <= Math.sqrt(n); i++) {
+    if (n % i === 0) {
+      return false;
+    }
+  }
+
+  return true;
+}
+```
+
+Complexity O($\sqrt{n}$)
 
 ### Power of 2
 
-O(log(n)) 
-O(1) bitwise version
+Number of the form 2<sup>n</sup> where n is an integer.
+
+```ts
+function isPowerOfTwo(n: number): boolean {
+  if (n < 1) {
+    return false;
+  }
+
+  while (n > 1) {
+    if (n % 2) {
+      return false;
+    }
+
+    n /= 2;
+  }
+
+  return true;
+}
+```
+
+Complexity O(log(n))
+
+### Pawer of 2 Bitwise version
+
+```ts
+function isPowerOfTwoBitwise(n: number): boolean {
+  if (n < 1) {
+    return false;
+  }
+
+  return (n & (n - 1)) === 0;
+}
+```
+
+Complexity O(1)
+
 
 ## Recursion
 
@@ -202,7 +282,7 @@ Complexity: O(log(n))
 
 ## Sorting
 
-Given an array of numbers, sort it ascending.
+Given an array of numbers, sort it in ascending order.
 
 ### Bubble sort
 
@@ -265,7 +345,27 @@ Find a pivot element (first, last, random or median) and put everything smaller 
 Repeat with recursion until all arrays have lenght 1 and concatenate them from left to right.
 
 ```ts
+function quickSort(arr: number[]): number[] {
+  // single element array
+  if (arr.length < 2) {
+    return arr;
+  }
 
+  // general case
+  let pivot: number = arr[arr.length - 1];
+  let left: number[] = [];
+  let right: number[] = [];
+
+  for (let i = 0; i < arr.length - 1; i++) {
+    if (arr[i] < pivot) {
+      left.push(arr[i]);
+    } else {
+      right.push(arr[i]);
+    }
+  }
+
+  return [...quickSort(left), pivot, ...quickSort(right)];
+}
 ```
 
-Complexity:  
+Complexity: O(n<sup>2</sup>) if array already sorted, O(nlog(n)) for average case
