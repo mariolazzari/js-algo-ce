@@ -1,4 +1,4 @@
-- [TypeScript Algorithms](#typescript-algorithms)
+- [JavaScript Algorithms and Data structures](#javascript-algorithms-and-data-structures)
   - [Algorithm](#algorithm)
   - [Big-O complexity](#big-o-complexity)
     - [Object](#object)
@@ -23,8 +23,9 @@
     - [Merge sort](#merge-sort)
   - [Misc](#misc)
     - [Cartesian product](#cartesian-product)
+    - [Climbing staircase](#climbing-staircase)
 
-# TypeScript Algorithms
+# JavaScript Algorithms and Data structures
 
 ## Algorithm
 
@@ -434,3 +435,13 @@ function cartsianProduct(arr1: number[], arr2: number[]): number[][] {
 ```
 
 Complexity O(n*m)
+
+### Climbing staircase
+
+Given a staircase of n steps, count the numbers of distinct ways to reach the top with 1 or 2 steps at the time.
+
+´´´ts
+
+```
+
+Complexity O()
