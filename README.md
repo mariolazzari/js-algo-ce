@@ -25,6 +25,14 @@
     - [Cartesian product](#cartesian-product)
     - [Climbing staircase](#climbing-staircase)
     - [Tower of Hanoi](#tower-of-hanoi)
+  - [Algotirhm design techniques](#algotirhm-design-techniques)
+    - [Brute force](#brute-force)
+    - [Greedy](#greedy)
+    - [Divice \& Conquer](#divice--conquer)
+    - [Dynamic programming](#dynamic-programming)
+    - [Backtracking](#backtracking)
+  - [Data structures](#data-structures)
+    - [Arrays](#arrays-1)
 
 # JavaScript Algorithms and Data structures
 
@@ -478,3 +486,62 @@ function hanoiTower(
 ```
 
 Complexity O(2<sup>n</sup>)
+
+## Algotirhm design techniques
+
+### Brute force
+
+Evaluate all possible solutions
+
+### Greedy
+
+Choose the best option at runtime
+
+### Divice & Conquer
+
+Divide problem into smaller parts and recombine partial solutions
+
+### Dynamic programming
+
+Memoization and reuse to improve time complexity
+
+### Backtracking
+
+Generate all possible solutions and check constraints: if not satisfied, backtrack to possible solutions
+
+## Data structures
+
+A way to store and organize data
+
+### Arrays
+
+Iterable zero-based collection of values
+
+```ts
+type Mixed = number | string;
+
+const arr: Mixed[] = [1, 2, 3, "Mario"];
+
+// add element to the end
+arr.push(4);
+// add element at the begining
+arr.unshift(0);
+// remove element at the end
+arr.pop();
+// remove element at the begining
+arr.shift();
+
+// iterate elements
+for (const item of arr) {
+  console.log(item);
+}
+```
+
+Complexity
+- Insert & remove from end: O(1)
+- Insert & remove from begining: O(n) (must reset all remaining indexes)
+- Access: O(1)
+- Search: O(n)
+- Push & Pop: O(1)
+- forEach, map, filter, reduce: O(n)
+

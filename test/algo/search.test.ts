@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { linearSearch } from "../search/linear";
-import { binarySearch, binarySearchRec } from "../search/binary";
+import { linearSearch } from "algo/search/linear";
+import { binarySearch, binarySearchRec } from "algo/search/binary";
 
 const arr = [-5, 2, 10, 4, 6];
 const sortedArr = [-5, 2, 4, 6, 10];

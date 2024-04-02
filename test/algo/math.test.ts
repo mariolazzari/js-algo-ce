@@ -1,8 +1,8 @@
 import { describe, expect, it } from "vitest";
-import { fibonacci, fibonacciRec } from "../math/fibonacci";
-import { factorial, factorialRec } from "../math/factorial";
-import { isPrime } from "../math/prime";
-import { isPowerOfTwo, isPowerOfTwoBitwise } from "../math/power";
+import { fibonacci, fibonacciRec } from "algo/math/fibonacci";
+import { factorial, factorialRec } from "algo/math/factorial";
+import { isPrime } from "algo/math/prime";
+import { isPowerOfTwo, isPowerOfTwoBitwise } from "algo/math/power";
 
 describe("Math", () => {
   it("should compute Fibonacci series", () => {

@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
-import { cartsianProduct } from "../misc/cartesian";
-import { climbingStaircase } from "../misc/climb";
-import { hanoiTowerStart } from "../misc/hanoi";
+import { cartsianProduct } from "algo/misc/cartesian";
+import { climbingStaircase } from "algo/misc/climb";
+import { hanoiTowerStart } from "algo/misc/hanoi";
 
 describe("Misc", () => {
   it("should perform Cartesian product", () => {
