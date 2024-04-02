@@ -24,6 +24,7 @@
   - [Misc](#misc)
     - [Cartesian product](#cartesian-product)
     - [Climbing staircase](#climbing-staircase)
+    - [Tower of Hanoi](#tower-of-hanoi)
 
 # JavaScript Algorithms and Data structures
 
@@ -440,8 +441,40 @@ Complexity O(n*m)
 
 Given a staircase of n steps, count the numbers of distinct ways to reach the top with 1 or 2 steps at the time.
 
-´´´ts
+```ts
+function climbingStaircase(n: number): number {
+  const ways = [1, 2];
 
+  for (let i = 2; i < n; i++) {
+    ways[i] = ways[i - 1] + ways[i - 2];
+  }
+
+  return ways[n - 1];
+}
 ```
 
-Complexity O()
+Complexity O(n)
+
+### Tower of Hanoi
+
+Move the entire stack to the last rod.
+
+```ts
+function hanoiTower(
+  n: number,
+  fromRod: string,
+  toRod: string,
+  usingRod: string
+) {
+  if (n === 1) {
+    logMove(n, fromRod, toRod);
+    return;
+  }
+
+  hanoiTower(n - 1, fromRod, usingRod, toRod);
+  logMove(n, fromRod, toRod);
+  hanoiTower(n - 1, usingRod, toRod, fromRod);
+}
+```
+
+Complexity O(2<sup>n</sup>)

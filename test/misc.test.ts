@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { cartsianProduct } from "../misc/cartesian";
 import { climbingStaircase } from "../misc/climb";
+import { hanoiTowerStart } from "../misc/hanoi";
 
 describe("Misc", () => {
   it("should perform Cartesian product", () => {
@@ -26,5 +27,15 @@ describe("Misc", () => {
     expect(climbingStaircase(3)).toBe(3);
     expect(climbingStaircase(4)).toBe(5);
     expect(climbingStaircase(5)).toBe(8);
+  });
+
+  it("should perform Tower of Hanoi", () => {
+    const res = hanoiTowerStart(3, "A", "C", "A");
+    const test = "Move disk 1 from A to C";
+
+    expect(res).toBeDefined();
+    expect(res.length).toBe(7);
+    expect(res[0]).toBe(test);
+    expect(res[6]).toBe(test);
   });
 });
