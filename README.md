@@ -33,6 +33,8 @@
     - [Backtracking](#backtracking)
   - [Data structures](#data-structures)
     - [Arrays](#arrays-1)
+    - [Object](#object-1)
+    - [Set](#set)
 
 # JavaScript Algorithms and Data structures
 
@@ -544,4 +546,48 @@ Complexity
 - Search: O(n)
 - Push & Pop: O(1)
 - forEach, map, filter, reduce: O(n)
+
+### Object
+
+Unordered, non iterable, collection of key-value pairs: key must be of type string or Symbol, value any type.
+
+```ts
+type Key = string;
+type Value = any;
+
+const person: Record<Key, Value> = {
+  name: "Mario",
+  age: 49,
+  "key-there": true,
+  // method
+  sayName: function () {
+    console.log("My name is " + this.name);
+  },
+};
+
+console.log("Name:", person.name);
+console.log("key-three", person["key-there"]);
+
+// add prop
+person.hobby = "Music";
+console.log(person);
+
+// delete prop
+delete person.hobby;
+console.log(person);
+
+// call method
+person.sayName();
+```
+
+Complexity
+- Insert prop: O(1)
+- Remove prop: O(1)
+- Access prop: O(1)
+- Search prop: O(n)
+- Object.keys: O(n)
+- Object.values: O(n)
+- Object.entries(): O(n)
+
+### Set
 

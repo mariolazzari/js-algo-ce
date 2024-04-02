@@ -4,12 +4,17 @@
   "description": "JavaScript Algorithms",
   "main": "index.js",
   "scripts": {
-    "test": "vitest"
+    "test": "vitest",
+    "array": "ts-node data/array"
   },
   "keywords": [],
   "author": "Mario Lazzari",
   "license": "ISC",
   "devDependencies": {
+    "nodemon": "^3.1.0",
     "vitest": "^1.4.0"
+  },
+  "dependencies": {
+    "ts-node": "^10.9.2"
   }
 }
