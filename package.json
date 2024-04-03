@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "vitest",
-    "array": "ts-node data/array",
-    "set": "ts-node data/set"
+    "arrays": "ts-node data/array",
+    "sets": "ts-node data/set",
+    "maps": "node --watch maps"
   },
   "keywords": [],
   "author": "Mario Lazzari",

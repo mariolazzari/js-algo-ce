@@ -36,6 +36,8 @@
     - [Object](#object-1)
     - [Set](#set)
       - [Sev vs Array](#sev-vs-array)
+    - [Map](#map)
+      - [Map vs Object](#map-vs-object)
 
 # JavaScript Algorithms and Data structures
 
@@ -628,6 +630,23 @@ console.log("set size:", set.size);
 set.clear();
 console.log("set size:", set.size);
 ```
+
+### Map
+
+Ordered collection of key-value pairs: both of them can be of any type.
+Key retrives its valus.
+Maps are iterble.
+
+#### Map vs Object
+
+- Map ordered, Object not.
+- Map key can be of any type, Object keys string and Symbol only.
+- Map is itarable, object not.
+- Map cannot contain methods.
+
+
+
+
 
 
 
