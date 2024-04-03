@@ -35,6 +35,7 @@
     - [Arrays](#arrays-1)
     - [Object](#object-1)
     - [Set](#set)
+      - [Sev vs Array](#sev-vs-array)
 
 # JavaScript Algorithms and Data structures
 
@@ -590,4 +591,43 @@ Complexity
 - Object.entries(): O(n)
 
 ### Set
+
+A collection of unique iterable values.
+
+#### Sev vs Array
+
+- inserted order not mantained
+- insert & delete faster 
+
+```ts
+const set: Set<number> = new Set();
+// optional array params in Set constructor
+const set2 = new Set([1, 2, 3]);
+
+// add value
+set.add(1);
+
+// duplicated values are automatically ignores
+set.add(1); // ignored
+set.add(2);
+set.add(3);
+
+// delete value
+set.add(4);
+set.delete(4);
+
+// iterable
+for (const item of set) {
+  console.log(item);
+}
+
+// size
+console.log("set size:", set.size);
+
+// clear all set values
+set.clear();
+console.log("set size:", set.size);
+```
+
+
 
