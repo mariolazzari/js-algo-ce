@@ -38,6 +38,9 @@
       - [Sev vs Array](#sev-vs-array)
     - [Map](#map)
       - [Map vs Object](#map-vs-object)
+    - [Stack](#stack)
+    - [Queue](#queue)
+    - [Circular queue](#circular-queue)
 
 # JavaScript Algorithms and Data structures
 
@@ -644,9 +647,101 @@ Maps are iterble.
 - Map is itarable, object not.
 - Map cannot contain methods.
 
+```ts
+// Map constructor has an array of tuples as optional parameter
+const map = new Map<string, number>([
+  ["a", 1],
+  ["b", 2],
+]);
 
+// set key value
+map.set("c", 3);
 
+// check if key exists
+if (map.has("c")) {
+  console.log("Map has c");
+}
 
+// delete key
+map.delete("c");
+
+// iterable
+for (const item of map) {
+  console.log(item);
+}
+
+// array destructuring
+for (const [key, val] of map) {
+  console.log(`[${key} : ${val}]`);
+}
+
+// map size
+console.log("Map size:", map.size);
+
+// delete all keys
+map.clear();
+```
+
+### Stack
+
+Sequential collection of elements following LIFO principle.
+
+- Push: add element
+- Pop: remove element
+
+### Queue
+
+Sequential collection of elements following FIFO principle.
+
+- Enqueue: add element
+- Dequeue: remove element
+
+```ts
+class Queue<T> {
+  private items: T[] = [];
+
+  constructor(items: T[] = []) {
+    this.items = items;
+  }
+
+  enqueue(item: T) {
+    this.items.push(item);
+  }
+
+  dequeue(): T | undefined {
+    if (this.isEmpty()) {
+      return undefined;
+    }
+    return this.items.shift();
+  }
+
+  isEmpty(): boolean {
+    return this.items.length === 0;
+  }
+
+  peek(): T | undefined {
+    if (this.isEmpty()) {
+      return undefined;
+    }
+    return this.items[0];
+  }
+
+  size() {
+    return this.items.length;
+  }
+
+  print() {
+    console.log(this.items.toString());
+  }
+}
+```
+
+### Circular queue
+
+Fixed size queue with first element connected to last one (FIFO).
+
+- Enqueue (pointer based)
+- Dequeue (pointer based)
 
 
 
