@@ -1,5 +1,5 @@
-import { CircularQueue, Queue } from "data/queues";
 import { describe, expect, it } from "vitest";
+import { CircularQueue, Queue } from "data/queues";
 
 describe("Queues", () => {
   it("should return empty queue", () => {
