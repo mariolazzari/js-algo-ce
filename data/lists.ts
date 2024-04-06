@@ -17,22 +17,38 @@ export class LinkedList<T> {
     this.size = 0;
   }
 
-  isEmpty() {
+  isEmpty(): boolean {
     return this.size === 0;
   }
 
-  getSize() {
+  getSize(): number {
     return this.size;
   }
 
-  prepend(value: T) {
+  prepend(value: T): void {
     const node = new ListNode(value);
-    if (this.isEmpty()) {
-      this.head = node;
-    } else {
+    this.head = node;
+    if (!this.isEmpty()) {
       node.next = this.head;
-      this.head = node;
     }
     this.size++;
+  }
+
+  print(): string {
+    if (this.isEmpty()) {
+      return "List is empty";
+    }
+
+    let cur = this.head;
+    let listValues = "";
+
+    while (cur) {
+      listValues += `${cur.value} `;
+
+      console.log(listValues);
+      cur = cur.next;
+    }
+
+    return listValues.trim();
   }
 }

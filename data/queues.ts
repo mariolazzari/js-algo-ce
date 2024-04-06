@@ -64,6 +64,7 @@ export class CircularQueue<T> {
       this.rear = (this.rear + 1) % this.capacity;
       this.items[this.rear] = element;
       this.currentLength++;
+
       if (this.front === -1) {
         this.front = this.rear;
       }

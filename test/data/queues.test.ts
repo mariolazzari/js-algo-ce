@@ -1,14 +1,15 @@
 import { describe, expect, it } from "vitest";
 import { CircularQueue, Queue } from "data/queues";
 
+const queue = new Queue<number>();
+const cq = new CircularQueue<number>(3);
+
 describe("Queues", () => {
   it("should return empty queue", () => {
-    const queue = new Queue<number>();
     expect(queue.isEmpty()).toBeTruthy();
   });
 
   it("should enqueue 3 elements", () => {
-    const queue = new Queue<number>();
     queue.enqueue(10);
     queue.enqueue(20);
     queue.enqueue(30);
@@ -17,10 +18,6 @@ describe("Queues", () => {
   });
 
   it("should dequeue 1 element1", () => {
-    const queue = new Queue<number>();
-    queue.enqueue(10);
-    queue.enqueue(20);
-    queue.enqueue(30);
     const item = queue.dequeue();
 
     expect(queue.size()).toBe(2);
@@ -30,18 +27,23 @@ describe("Queues", () => {
 
 describe("Circular Queues", () => {
   it("should return empty queue", () => {
-    const cq = new CircularQueue<number>(5);
     expect(cq.isEmpty()).toBeTruthy();
   });
 
-  it("should dequeue 1 element1", () => {
-    const cq = new CircularQueue<number>(5);
+  it("should return empty queue", () => {
+    expect(cq.isEmpty()).toBeTruthy();
+  });
+
+  it("should enqueue 3 elements", () => {
     cq.enqueue(10);
     cq.enqueue(20);
     cq.enqueue(30);
-    const item = cq.dequeue();
-    console.log(item);
 
+    const item = cq.dequeue();
     expect(item).toBe(10);
   });
+
+  // it("should by full", () => {
+  //   expect(cq.isFull()).toBeTruthy();
+  // });
 });
