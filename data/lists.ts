@@ -1,19 +1,19 @@
 class ListNode<T> {
   public value: T;
-  public next?: ListNode<T>;
+  public next: ListNode<T> | null;
 
   constructor(value: T) {
     this.value = value;
-    this.next = undefined;
+    this.next = null;
   }
 }
 
 export class LinkedList<T> {
-  private head?: ListNode<T>;
+  private head: ListNode<T> | null;
   private size: number;
 
   constructor() {
-    this.head = undefined;
+    this.head = null;
     this.size = 0;
   }
 
@@ -25,11 +25,39 @@ export class LinkedList<T> {
     return this.size;
   }
 
-  prepend(value: T): void {
+  private createNode(value: T) {
     const node = new ListNode(value);
-    this.head = node;
-    if (!this.isEmpty()) {
+    return node;
+  }
+
+  // O(1)
+  prepend(value: T): void {
+    const node = this.createNode(value);
+    if (this.isEmpty()) {
+      this.head = node;
+    }
+    {
       node.next = this.head;
+      this.head = node;
+    }
+    this.size++;
+  }
+
+  // O(1)
+  append(value: T): void {
+    const node = this.createNode(value);
+    if (this.isEmpty()) {
+      this.head = node;
+    } else {
+      let prev = this.head;
+
+      while (prev?.next) {
+        prev = prev.next;
+      }
+
+      if (prev) {
+        prev.next = node;
+      }
     }
     this.size++;
   }
