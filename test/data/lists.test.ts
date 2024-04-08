@@ -20,7 +20,7 @@ describe("LinkedList", () => {
     list.prepend(10);
 
     expect(list.isEmpty()).toBeFalsy();
-    //    expect(list.print()).toBe("List is empty");
+    expect(list.print()).toBe("List is empty");
   });
 
   it("should append a node", () => {
@@ -30,12 +30,13 @@ describe("LinkedList", () => {
     //    expect(list.print()).toBe("List is empty");
   });
 
-  //   it("should print list values", () => {
-  //     const list = new LinkedList<number>();
-  //     list.prepend(10);
-  //     list.prepend(20);
-  //     list.prepend(30);
+  it("should insert a node", () => {
+    list.insert(30, 2);
 
-  //     expect(list.print()).toBe("10 20 30");
-  //   });
+    expect(list.isEmpty()).toBeFalsy();
+  });
+
+  it("should print list values", () => {
+    expect(list.print()).toBe("10 20 30");
+  });
 });

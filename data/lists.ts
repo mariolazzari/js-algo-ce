@@ -1,19 +1,19 @@
 class ListNode<T> {
   public value: T;
-  public next: ListNode<T> | null;
+  public next?: ListNode<T>;
 
   constructor(value: T) {
     this.value = value;
-    this.next = null;
+    this.next = undefined;
   }
 }
 
 export class LinkedList<T> {
-  private head: ListNode<T> | null;
+  private head: ListNode<T> | undefined;
   private size: number;
 
   constructor() {
-    this.head = null;
+    this.head = undefined;
     this.size = 0;
   }
 
@@ -62,21 +62,44 @@ export class LinkedList<T> {
     this.size++;
   }
 
+  insert(value: T, index: number): void {
+    if (index < 0 || index > this.size) {
+      return;
+    }
+
+    if (index === 0) {
+      this.prepend(value);
+    } else {
+      const node = new ListNode(value);
+      let prev = this.head;
+      for (let i = 0; i < index - 1; i++) {
+        prev = prev?.next;
+      }
+
+      if (prev) {
+        node.next = prev?.next;
+        prev.next = node;
+        this.size++;
+      }
+    }
+  }
+
   print(): string {
     if (this.isEmpty()) {
       return "List is empty";
     }
 
-    let cur = this.head;
-    let listValues = "";
+    return "test";
+    // let cur = this.head;
+    // let listValues = "";
 
-    while (cur) {
-      listValues += `${cur.value} `;
+    // while (cur) {
+    //   listValues += `${cur.value} `;
 
-      console.log(listValues);
-      cur = cur.next;
-    }
+    //   console.log(listValues);
+    //   cur = cur.next;
+    // }
 
-    return listValues.trim();
+    // return listValues.trim();
   }
 }
