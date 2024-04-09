@@ -84,6 +84,31 @@ export class LinkedList<T> {
     }
   }
 
+  removeFrom(index: number) {
+    if (index < 0 || index > this.size) {
+      return null;
+    }
+
+    let removed: ListNode<T> | undefined;
+    if (index === 0) {
+      removed = this.head;
+      this.head = this.head?.next;
+    } else {
+      let prev = this.head;
+      for (let i = 0; i < index - 1; i++) {
+        prev = prev?.next;
+      }
+      removed = prev?.next;
+
+      if (prev) {
+        prev.next = removed?.next;
+      }
+    }
+
+    this.size--;
+    return removed?.value;
+  }
+
   print(): string {
     if (this.isEmpty()) {
       return "List is empty";
